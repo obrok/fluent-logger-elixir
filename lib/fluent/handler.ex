@@ -1,4 +1,6 @@
-defexception Fluent.ConnectionError, host: nil, port: nil, reason: "" do
+defmodule Fluent.ConnectionError do
+  defexception host: nil, port: nil, reason: ""
+
   def message(exception) do
     "cannot connect to #{exception.host}:#{exception.port} by #{exception.reason}"
   end
